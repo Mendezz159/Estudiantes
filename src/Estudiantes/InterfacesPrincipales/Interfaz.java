@@ -2,8 +2,11 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
-package Estudiantes;
+package Estudiantes.InterfacesPrincipales;
 
+import Estudiantes.Gestores.Estudiante;
+import Estudiantes.Gestores.GestionEstudiantes;
+import Estudiantes.InterfacesCambios.IngresarEstudiante;
 import java.util.Collection;
 import javax.swing.DefaultListModel;
 

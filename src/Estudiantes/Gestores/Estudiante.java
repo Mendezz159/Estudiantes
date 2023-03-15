@@ -12,10 +12,10 @@ public class Estudiante {
     private String nombres;
     private String apellidos;
     private String direccion;
-    private int telefono;
+    private String telefono;
     private String carrera;
 
-    public Estudiante(String nombres, String apellidos, String direccion, int telefono, String carrera) {
+    public Estudiante(String nombres, String apellidos, String direccion, String telefono, String carrera) {
         this.nombres = nombres;
         this.apellidos = apellidos;
         this.direccion = direccion;
@@ -49,11 +49,11 @@ public class Estudiante {
         this.direccion = direccion;
     }
 
-    public int getTelefono() {
+    public String getTelefono() {
         return telefono;
     }
 
-    public void setTelefono(int telefono) {
+    public void setTelefono(String telefono) {
         this.telefono = telefono;
     }
 

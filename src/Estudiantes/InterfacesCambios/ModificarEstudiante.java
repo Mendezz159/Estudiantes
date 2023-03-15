@@ -194,7 +194,7 @@ public class ModificarEstudiante extends javax.swing.JFrame {
         Estudiante elviejo = new Estudiante(this.txtfillNombres.getText(),
                                             this.txtfillApellidos.getText(),
                                             this.txtfillDireccion.getText(),
-                                            Integer.valueOf(this.txtfillTelefono.getText().trim()),
+                                            this.txtfillTelefono.getText(),
                                             this.txtfillCarrera.getText());
         
         GestionEstudiantes.ModificarEstudiante(codigo, elviejo);

@@ -5,7 +5,6 @@
 package Estudiantes.InterfacesCambios;
 
 import Estudiantes.Gestores.Estudiante;
-import java.util.HashMap;
 
 /**
  *
@@ -13,16 +12,13 @@ import java.util.HashMap;
  */
 public class Consultar extends javax.swing.JFrame {
     
-    private int codigo;
-    
     public Consultar(int codigo, Estudiante estudiante) {
         initComponents();
-        this.codigo = codigo;
         this.txtCodigo.setText(String.valueOf(codigo));
         this.txtNombres.setText(estudiante.getNombres());
         this.txtApellidos.setText(estudiante.getApellidos());
         this.txtDireccion.setText(estudiante.getDireccion());
-        this.txtTelefono.setText(String.valueOf(estudiante.getTelefono()));
+        this.txtTelefono.setText(estudiante.getTelefono());
         this.txtCarrera.setText(estudiante.getCarrera());
     }
 

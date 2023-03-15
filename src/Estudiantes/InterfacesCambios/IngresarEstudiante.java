@@ -7,7 +7,6 @@ package Estudiantes.InterfacesCambios;
 import Estudiantes.Gestores.Estudiante;
 import Estudiantes.Gestores.GestionEstudiantes;
 import Estudiantes.InterfacesPrincipales.Interfaz;
-import java.util.HashMap;
 
 /**
  *
@@ -198,7 +197,7 @@ public class IngresarEstudiante extends javax.swing.JFrame {
         elnuevo = new Estudiante(this.txtfillNombres.getText(),
                                  this.txtfillApellidos.getText(),
                                  this.txtfillDireccion.getText(),
-                                 Integer.parseInt(this.txtfillTelefono.getText().trim()),
+                                 this.txtfillTelefono.getText(),
                                  this.txtfillCarrera.getText());
         
         GestionEstudiantes.AgregarEstudiante(Integer.parseInt(this.txtfillCodigo.getText()), elnuevo);

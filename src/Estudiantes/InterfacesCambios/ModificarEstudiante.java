@@ -53,6 +53,7 @@ public class ModificarEstudiante extends javax.swing.JFrame {
         TituloRegistro = new javax.swing.JLabel();
         ErrorCodigo = new javax.swing.JLabel();
         txtCodigo = new javax.swing.JLabel();
+        errorTelefono = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -126,8 +127,10 @@ public class ModificarEstudiante extends javax.swing.JFrame {
                                 .addGap(25, 25, 25)
                                 .addComponent(txtCodigo)))
                         .addGap(18, 18, 18)
-                        .addComponent(ErrorCodigo)))
-                .addContainerGap(92, Short.MAX_VALUE))
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(ErrorCodigo)
+                            .addComponent(errorTelefono))))
+                .addContainerGap(140, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -154,7 +157,8 @@ public class ModificarEstudiante extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(Telefono)
-                    .addComponent(txtfillTelefono, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(txtfillTelefono, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(errorTelefono))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(EnunCarrera)
@@ -170,7 +174,13 @@ public class ModificarEstudiante extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnGuardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGuardarActionPerformed
-        if(txtfillNombresCheck()&&txtfillApellidosCheck()&&txtfillDireccionCheck()&&txtfillTelefonoCheck()&&txtfillCarreraCheck()){
+        boolean NombresValido = txtfillNombresCheck();
+        boolean ApellidosValido = txtfillApellidosCheck();
+        boolean DireccionValido = txtfillDireccionCheck();
+        boolean TelefonoValido = txtfillTelefonoCheck();
+        boolean CarreraValido = txtfillCarreraCheck();
+        
+        if(NombresValido && ApellidosValido && DireccionValido && TelefonoValido && CarreraValido){
             this.ModificarDatos();
             Interfaz.RefrescarLista();
             dispose();
@@ -213,7 +223,16 @@ public class ModificarEstudiante extends javax.swing.JFrame {
     }
     
     private boolean txtfillTelefonoCheck(){
-        return(this.txtfillTelefono.getText().length() == 10);
+        boolean Digitos10 = this.txtfillTelefono.getText().length() == 10;
+        
+        
+        if(!Digitos10){
+            this.errorTelefono.setText("Digite 10 digitos");
+        }else{
+            this.errorTelefono.setText("");
+        }
+        
+        return(Digitos10);
     }
     
     private boolean txtfillCarreraCheck(){
@@ -236,6 +255,7 @@ public class ModificarEstudiante extends javax.swing.JFrame {
     private javax.swing.JLabel TituloRegistro;
     private javax.swing.JToggleButton btnCancelar;
     private javax.swing.JToggleButton btnGuardar;
+    private javax.swing.JLabel errorTelefono;
     private javax.swing.JLabel txtCodigo;
     private javax.swing.JTextField txtfillApellidos;
     private javax.swing.JTextField txtfillCarrera;
